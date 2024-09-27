@@ -45,13 +45,15 @@ git remote -v
 cd src
 copy id_rsa C:\Users\xxxx\.ssh\
 start-ssh-agent
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 npm install
 编辑src/docs下的笔记
 # 预览
 npm run docs:dev
 git add .
 git status
-git commit -m 'xxxx'
+git commit -m "xxxx"
 git branch -M main
 git push -u origin main
 ```
