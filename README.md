@@ -44,13 +44,14 @@ cd anon-note.github.io
 git remote remove origin
 git remote add origin git@github.com:anon-note/anon-note.github.io.git
 git remote -v
+mkdir C:\Users\$env:USERNAME\.ssh\
 copy id_rsa C:\Users\$env:USERNAME\.ssh\
 ls C:\Users\$env:USERNAME\.ssh\
 start-ssh-agent
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 npm install
-编辑anon-note.github.io/docs下的笔记
+编辑anon-note.github.io/docs下的笔记,参考0x04
 # 预览
 npm run docs:dev
 git add .
@@ -59,4 +60,15 @@ git commit -m "xxxx"
 git branch -M main
 git push -u origin main
 ```
+
+
+
+# 0x04 使用Obsidian编辑
+
+1. 设置Obsidian仓库目录为docs
+2. 设置-`files and links-new link format`-`relative path to file`
+3. 设置-`files and links-new link format`-`relative path to file`
+4. 设置-`files and links`-`default localtion for new attachments`-`in the folder specified below`-`/images` #/images需要存在
+5. 设置-`files and links`-`use[[wikilinks]]`-`disable`
+6. `npm run docs:dev`检查显示是否正常
 
