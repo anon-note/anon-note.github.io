@@ -38,17 +38,19 @@ https://vitepress.dev/reference/default-theme-home-page
 # 0x03 拉取修改并更新
 
 ```
-git clone https://github.com/anon-note/src.git
+powershell
+git clone https://github.com/anon-note/anon-note.github.io.git
+cd anon-note.github.io
 git remote remove origin
-git remote add origin git@github.com:anon-note/src.git
+git remote add origin git@github.com:anon-note/anon-note.github.io.git
 git remote -v
-cd src
-copy id_rsa C:\Users\xxxx\.ssh\
+copy id_rsa C:\Users\$env:USERNAME\.ssh\
+ls C:\Users\$env:USERNAME\.ssh\
 start-ssh-agent
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 npm install
-编辑src/docs下的笔记
+编辑anon-note.github.io/docs下的笔记
 # 预览
 npm run docs:dev
 git add .
