@@ -568,7 +568,8 @@ app.exec()
 	- 快速、灵活、和易于理解的数据结构，以此让处理关系型数据和带有标签的数据时更简单直观
 
 ### 5.3 数据库模型
-- sqlite数据源：![右键复制链接下载](../images/chinook.sqlite)
+- sqlite测试数据源
+	- https://github.com/anon-note/anon-note.github.io/blob/master/docs/content/images/chinook.sqlite
 - sqlite例子
 ```python
 import os
