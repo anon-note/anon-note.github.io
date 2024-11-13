@@ -7,6 +7,8 @@ pylance # 默认存在
 pip install PySide6 # PySide6==6.8.0.2
 # 智能补全参考
 https://blog.csdn.net/qq_42692823/article/details/132214353
+https://code.visualstudio.com/docs/languages/python
+https://code.visualstudio.com/docs/python/editing
 ```
 
 
