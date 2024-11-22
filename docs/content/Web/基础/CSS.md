@@ -917,6 +917,11 @@ img的父div添加`overflow: auto;`即可
 
 ### flex容器属性
 
+#### gap
+- 设置flex布局子项之间的间距，适合在紧挨的时候使用此选项
+- 使用场景
+	- 如导航栏![](../../images/flex-gap.png)
+
 #### **flex-direction**
 - row
 - column
@@ -942,6 +947,7 @@ img的父div添加`overflow: auto;`即可
 		- 和space-evenly 的区别是，首位与边界的距离是项之间距离的一半。![](../../images/justify-content-space-around.png)
 #### **align-items**
 - align-items 属性处理 Flex 项在 Flex 容器交叉轴上的对齐方式。
+- 是针对单行项目的对齐，影响的是每个项目在交叉轴上的位置。
 	- **stretch**（默认值） 
 		- 这会拉伸 Flex 项以填充 Flex 容器内的空间。![](../../images/align-items-stretch.png)
 	- **flex-start**
@@ -954,6 +960,7 @@ img的父div添加`overflow: auto;`即可
 		- 第一行基线对齐（还有last baseline）。以最大元素作为基线。![](../../images/align-items-baseline.png)
 	- 
 #### **align-content**
+- 是针对多行项目的对齐，影响的是行组之间的整体位置。
 - **stretch**
 	- 拉伸 Flex 行以填充 Flex 容器**交叉轴内**的空间。![](../../images/align-content-stretch.png)
 	- **flex-start**
@@ -1029,3 +1036,5 @@ div {
 - https://zh.learnlayout.com/
 - https://developer.mozilla.org/zh-CN/docs/Web/CSS
 - https://www.freecodecamp.org/chinese/news/the-css-flexbox-handbook/  
+- https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/
+- https://www.joshwcomeau.com/css/interactive-guide-to-grid/
