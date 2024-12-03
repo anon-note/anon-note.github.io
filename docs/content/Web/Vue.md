@@ -321,6 +321,19 @@ const awesome = ref(false)
 </template>
 ```
 
+### `<template>`上的 v-if
+
+因为 v-if 是一个指令，他必须依附于某个元素。但如果我们想要切换不止一个元素呢？在这种情况下我们可以在一个 `<template>` 元素上使用 v-if，这只是一个不可见的包装器元素，最后渲染的结果并不会包含这个 `<template>` 元素。
+
+```vue
+<template v-if="ok">
+  <h1>Title</h1>
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+</template>
+```
+
+
 
 - v-show
 ```vue
@@ -376,6 +389,19 @@ const items = ref([{ message: 'Foo' }, { message: 'Bar' }])
 <span v-for="n in 10">{{ n }}</span>
 ```
 
+### `<template>` 上的 v-for
+
+与模板上的 v-if 类似，你也可以在 `<template>` 标签上使用 v-for 来渲染一个包含多个元素的块。例如：  
+
+```vue
+<ul>
+  <template v-for="item in items">
+    <li>{{ item.msg }}</li>
+    <li class="divider" role="presentation"></li>
+  </template>
+</ul>
+```
+
 
 ### 展示过滤后的结果 
 
@@ -421,6 +447,9 @@ function  search() {
 <p v-else>没有找到结果</p>
 </template>
 ```
+
+
+
 
 
 ## 事件处理 

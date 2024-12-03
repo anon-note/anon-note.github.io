@@ -378,10 +378,111 @@ async function fetchData() {
 ```
 
 
-## NPM
+## NODE.JS
+
+从本章开始，我们编写的JavaScript代码将不能在浏览器环境中执行了，而是在Node环境中执行，因此，JavaScript代码将直接在你的计算机上以命令行的方式运行，所以，我们要先选择一个文本编辑器来编写JavaScript代码，并且把它保存到本地硬盘的某个目录，才能够执行。
+
+### npm
 
 - https://www.cnblogs.com/importsober/p/15357772.html
+### hello world
 
+```js
+// hello.js
+console.log("hello world");
+
+// 运行 node hello.js
+// 输出
+hello world
+```
+
+### 使用模块
+
+一个js文件就是一个模块，模块的名字就是文件名（去掉.js后缀），所以hello.js文件就是名为hello的模块。把hello.js改造一下，创建一个函数，这样我们就可以在其他地方调用这个函数：
+
+```js
+// hello.js
+
+function hello(name){
+    console.log("hello "+name);
+}
+
+const testvar = "testvar"
+
+// 可以将函数，变量导出
+module.exports = {
+    hello,
+    testvar
+}
+```
+
+- 调用模块
+```js
+const hello = require("./node")
+
+
+hello.hello("alice")
+
+console.log(hello.testvar)
+
+// 输出
+hello alice
+testvar
+```
+
+### 使用ESM模块
+
+- ESM模块默认启用strict模式，无需声明'use strict'
+
+虽然Node.js从诞生起就支持模块，但JavaScript语言本身长期以来却一直没有模块功能，只能由CommonJS或其他AMD等模块系统来“模拟”。  
+
+随着ES 6标准的推出，JavaScript语言本身终于也迎来了原生内置的模块支持，称为ECMAScript Modules（简称ESM），不仅可以直接在浏览器中使用模块，也可以在Node.js中使用ESM模块。  
+
+使用JavaScript内置的原生模块时，用关键字export和import来实现导出与导入；
+
+- 导出
+```js
+let s = 'Hello';
+
+// out是模块内部函数，模块外部不可见:
+function out(prompt, name) {
+    console.log(`${prompt}, ${name}!`);
+}
+
+// greet是导出函数，可被外部调用:
+export function greet(name) {
+    out(s, name);
+}
+
+// hi是导出函数，可被外部调用:
+export function hi(name) {
+    out('Hi', name);
+}
+```
+
+- 导入
+
+```js
+import { greet, hi } from './hello.mjs';
+
+let name = 'Bob';
+greet(name);
+hi(name);
+```
+
+- 浏览器加载ESM
+```html
+<html>
+<head>
+    <script type="module" src="./example.js"></script>
+    <script type="module">
+        greet('Bob');
+    </script>
+</head>
+...
+</html>
+```
 ## 参考
 
 - https://www.runoob.com/js/js-tutorial.html
+- https://liaoxuefeng.com/books/javascript/nodejs/first-node-app/index.html
